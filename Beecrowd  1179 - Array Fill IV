@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main(){
+    int X,par[5],impar[5],parcount=0,imparcount=0;
+    for(int i=0;i<15;i++){
+        scanf("%d",&X);
+        if(X%2!=0 || X==1){
+            impar[imparcount]=X;
+            ++imparcount;
+            if(imparcount>4){
+                for(int j=0;j<5;j++) printf("impar[%d] = %d\n",j,impar[j]);
+                imparcount=0;
+            }
+        }
+        else if(X%2==0 || X==0){
+            par[parcount]=X;
+            ++parcount;
+            if(parcount>4){
+                for(int j=0;j<5;j++) printf("par[%d] = %d\n",j,par[j]);
+                parcount=0;
+            }
+        }
+    }
+    for(int j=0;j<imparcount;j++) printf("impar[%d] = %d\n",j,impar[j]);
+    for(int j=0;j<parcount;j++) printf("par[%d] = %d\n",j,par[j]);
+
+    return 0;
+}
