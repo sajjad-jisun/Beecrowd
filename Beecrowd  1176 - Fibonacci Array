@@ -1,0 +1,22 @@
+#include<stdio.h>
+unsigned long long fib(int n){
+    if(n==0) return 0;
+    if(n==1) return 1;
+    unsigned long long a=1,b=0,next=0;
+    for(int i=2;i<=n;i++){
+        next=a+b;
+        b=a;
+        a=next;
+    }
+    return next;
+}
+int main(){
+    int T;
+    scanf("%d",&T);
+    while(T--){
+        int X;
+        scanf("%d",&X);
+        printf("Fib(%d) = %llu\n",X,fib(X));
+    }
+    return 0;
+}
